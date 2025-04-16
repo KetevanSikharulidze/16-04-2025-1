@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/songsID"
+        android:title="Songs"
+        android:icon="@drawable/ic_music_note"/>
+    <item
+        android:id="@+id/videosID"
+        android:icon="@drawable/ic_video"
+        android:title="Videos" />
+    <item
+        android:id="@+id/moreID"
+        android:icon="@drawable/ic_more"
+        android:title="More" />
+</menu>
