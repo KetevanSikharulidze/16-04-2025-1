@@ -37,13 +37,18 @@ class SongsFragment : Fragment() {
         val viewPagerAdapter = ViewPagerAdapter(requireActivity(), fList)
         vp.adapter = viewPagerAdapter
 
+//        val tList = listOf(
+//            ContextCompat.getDrawable(requireContext(),R.drawable.ic_equalizer),
+//            ContextCompat.getDrawable(requireContext(),R.drawable.ic_forward_arrow)
+//        )
+
         val tList = listOf(
-            ContextCompat.getDrawable(requireContext(),R.drawable.ic_equalizer),
-            ContextCompat.getDrawable(requireContext(),R.drawable.ic_forward_arrow)
+            "Songs", "Playlists"
         )
 
         TabLayoutMediator(tabLayout,vp) { tab, position ->
-            tab.icon = tList[position]
+//            tab.icon = tList[position]
+            tab.text = tList[position]
         }.attach()
 
     }
