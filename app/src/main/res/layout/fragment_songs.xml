@@ -20,7 +20,7 @@
         android:id="@+id/audifyLogo"/>
 
     <ImageButton
-
+        android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_search_24"
@@ -72,5 +72,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:background="#6A6A6A"
+        android:id="@+id/currentSongLinear"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="50dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundedCorners"
+            android:layout_height="50dp"
+            android:background="@color/grey"
+            android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Song Name"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@id/currentSongLinear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/currentSongLinear"
+        app:layout_constraintTop_toTopOf="@id/currentSongLinear">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/outline_shortcut_24"
+            android:background="@null"
+            android:layout_marginEnd="5dp"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_favorite_border_24"
+            android:background="@null"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="@id/currentSongLinear"
+            app:layout_constraintBottom_toBottomOf="@id/currentSongLinear"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_pause_24"
+            android:background="@null"/>
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

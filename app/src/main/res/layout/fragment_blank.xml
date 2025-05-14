@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".songsFragments.BlankFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Blank Fragment 1"
-        android:textSize="64sp"
-        android:gravity="center"/>
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/songsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="89 Songs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="15dp"/>
+
+        <TextView
+            android:id="@+id/songsListedOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date added"
+            android:drawableEnd="@drawable/baseline_arrow_upward_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/songsCount"
+            android:layout_marginEnd="15dp"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shuffleIV"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/grey"
+            android:layout_marginTop="15dp"
+            app:contentPadding="20dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundedCorners"
+            android:src="@drawable/baseline_shuffle_24"
+            app:layout_constraintStart_toStartOf="@id/songsCount"
+            app:layout_constraintTop_toBottomOf="@id/songsCount"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shuffle All"
+            app:layout_constraintTop_toTopOf="@id/shuffleIV"
+            app:layout_constraintBottom_toBottomOf="@id/shuffleIV"
+            app:layout_constraintStart_toEndOf="@id/shuffleIV"
+            android:layout_marginStart="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/songsRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/songsCount"
+            app:layout_constraintEnd_toEndOf="@id/songsListedOptions"
+            app:layout_constraintTop_toBottomOf="@id/shuffleIV"
+            tools:listitem="@layout/song_item"
+            android:layout_marginTop="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
